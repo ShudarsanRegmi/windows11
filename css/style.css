@@ -1,0 +1,380 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Calibri, "Times New Roman";
+}
+
+body {
+    overflow: hidden;
+}
+
+#container {
+    height: 100vh;
+    width: 100vw;
+    max-height: 100%;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+#desktop {
+    background-size: cover;
+    background-image: url("../images/wallpaper.jpg");
+    flex-grow: 1;
+}
+
+#taskbar {
+    background-color: #D6DCEA;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+#taskbarCenter {
+    display: flex;
+}
+
+.taskbarIcons {
+    height: 30px;
+    width: 30px;
+    margin: 5px 10px;
+    cursor: pointer;
+}
+
+.taskbarIcons>img {
+    width: 100%;
+}
+
+#taskbarRight {
+    /* background-color: yellow; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    right: 0;
+}
+
+.rightIcons {
+    margin: 2px 6px;
+}
+
+.fa-wifi {
+    transform: rotate(30deg);
+}
+
+#dateTime {
+    margin: 2px 10px;
+}
+
+#appDrawer {
+    display: flex;
+    flex-direction: column;
+}
+
+.app {
+    width: 70px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    /* background-color: orange; */
+    margin: 6px;
+    padding: 3px;
+}
+
+.app>img {
+    height: 40px;
+    width: 40px;
+}
+
+.appName {
+    margin-top: 5px;
+    font-size: 15px;
+    line-height: 15px;
+}
+
+
+/* Main menu design */
+
+#mainMenu {
+    position: absolute;
+    width: 250px;
+    background-color: #F2F3F3;
+    z-index: 100;
+    top: 0;
+    display: none;
+}
+
+#mainMenu>ul {
+    list-style-type: none;
+}
+
+#mainMenu>ul>hr {
+    margin: 15px;
+}
+
+#mainMenu>ul>li {
+    margin: 5px 5px 5px 25px;
+    cursor: pointer;
+}
+
+#mainMenu>ul>li:hover {
+    background-color: #ffffff;
+}
+
+.menuRightIcon {
+    position: absolute;
+    right: 8px;
+}
+
+.menuLeftIcons {
+    position: absolute;
+    left: 5px;
+}
+
+.menuLeftIcons>img {
+    height: 16px;
+    margin-right: 2px;
+}
+
+
+/* Working on start menu */
+
+#startMenu {
+    /* height: 600px; */
+    width: 600px;
+    border-radius: 8px;
+    background-color: #DEE5F0;
+    position: absolute;
+    bottom: -600px;
+    left: 50%;
+    transform: translateX(-50%);
+    visibility: hidden;
+    transition: 0.3s ease-in-out;
+}
+
+#appsCon {
+    /* background-color: orange; */
+    padding: 5px;
+}
+
+#appsConHeader {
+    position: relative;
+    /* background-color: pink; */
+    height: 50px;
+    display: flex;
+    align-items: center;
+}
+
+#appsConHeader>span {
+    font-weight: 700;
+    margin: 75px;
+}
+
+#allAppOpener {
+    background-color: #fff;
+    padding: 5px 10px;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+#pinnedApps {
+    /* background-color: antiquewhite; */
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 1fr);
+    place-items: center;
+}
+
+.pinned>img {
+    height: 25px;
+    width: 25px;
+}
+
+.pinned>.appName {
+    font-size: 12px;
+}
+
+
+/* Designing recommended box */
+
+#recommendedBox {
+    /* background-color: orange; */
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+}
+
+#recommendHeader {
+    /* background-color: lightyellow; */
+    display: flex;
+    align-items: center;
+    height: 50px;
+    position: relative;
+}
+
+#recommendHeader>span {
+    margin: 66px;
+    font-weight: 700;
+}
+
+#recommendedMore {
+    position: absolute;
+    right: 10px;
+    background-color: #fff;
+    padding: 5px 10px;
+}
+
+#recommendedBody {
+    /* background-color: lightslategray; */
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    place-items: center;
+    column-gap: 5px;
+    row-gap: 20px;
+}
+
+.recommendedApp {
+    /* background-color: lightblue; */
+    display: flex;
+    align-items: center;
+}
+
+.appInfos {
+    display: flex;
+    flex-direction: column;
+}
+
+.appInfos>.appName {
+    font-weight: 400;
+}
+
+.appInfos>.addedTime {
+    font-weight: 300;
+    color: #9197A8;
+    font-size: 15px;
+}
+
+#footer {
+    /* background-color: greenyellow; */
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin-top: 15px;
+}
+
+#footer>#userAccountCon {
+    display: flex;
+    align-items: center;
+    margin-left: 30px;
+}
+
+#userAccountCon>#profile {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    /* background-color: pink; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#profile>img {
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+}
+
+#userAccountCon>#userName {
+    margin-left: 10px;
+    font-weight: 700;
+}
+
+#powerOptions {
+    position: absolute;
+    right: 20px;
+    color: #364455;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+#powerOptionMenu {
+    background-color: #2A2A2B;
+    position: absolute;
+    right: 0;
+    bottom: 50px;
+    display: none;
+}
+
+#powerOptionMenu>ul {
+    list-style-type: none;
+    color: #fff;
+}
+
+#powerOptionMenu>ul>li {
+    /* background-color: */
+    padding: 4px 10px;
+    cursor: pointer;
+}
+
+#powerOptionMenu>ul>li:hover {
+    background-color: #414041;
+}
+
+
+/* Shutdown */
+
+#shutDownDiv {
+    height: 100vh;
+    width: 100vw;
+    background-color: #fff;
+    position: fixed;
+    top: 0;
+    z-index: 100;
+    display: none;
+}
+
+#shutDownVideo {
+    height: 100vh;
+    width: 100vw;
+}
+
+#powerOnDiv {
+    height: 100vh;
+    width: 100vw;
+    background-color: #000;
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    /* display: none !important; */
+}
+
+.powerOnBtn {
+    height: 100px;
+    width: 100px;
+    font-size: 50px;
+    color: lightgreen;
+    cursor: pointer;
+}
+
+#bootDiv {
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    top: 0;
+    background-color: gray;
+    /* display: none !important; */
+}
+
+#bootingVideo {
+    height: 100vh;
+    width: 100vw;
+}
